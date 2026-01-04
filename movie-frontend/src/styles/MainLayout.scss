@@ -1,0 +1,11 @@
+.main-layout {
+  min-height: 100vh;
+  background-color: #fafafa;
+  width: 100vw;
+}
+
+.content {
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+}

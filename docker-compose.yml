@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: movie-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./movie-backend
+    container_name: movie-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URL: mongodb://mongo:27017
+    volumes:
+      - ./movie-backend:/app
+    restart: always
+
+  frontend:
+    build: ./movie-frontend
+    container_name: movie-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./movie-frontend:/app
+    restart: always
+
+volumes:
+  mongo_data:
