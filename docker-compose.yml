@@ -31,6 +31,7 @@ services:
       - backend
     volumes:
       - ./movie-frontend:/app
+      - /app/node_modules
     restart: always
 
 volumes:
