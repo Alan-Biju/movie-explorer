@@ -8,22 +8,24 @@ Check installation:
 ```bash
 docker --version
 docker compose version
-
+```
 
 Run the Application
 
 Go to the project folder:
 ```bash
 cd movie
-
+```
 
 Start all services:
+```bash
 docker compose up --build
+```
 
 Wait until all containers are running.
 Once done, open the frontend URL in your browser to view the application.
 
-Access
+### Access
 
 Frontend (open):
 http://localhost:5173
